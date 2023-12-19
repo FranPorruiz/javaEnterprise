@@ -25,6 +25,10 @@ public class BuscadorService {
 			}
 		}
 		return filtrados;	
+		//Metodo con programacion funcional, el stream lo que hace es recorrer los datos con un puntero
+		// return resultados.stream()
+		//.filter(pagina->pagina.getTematica().equals(tematica))
+		//.toList(); 
 	}
 
 }
