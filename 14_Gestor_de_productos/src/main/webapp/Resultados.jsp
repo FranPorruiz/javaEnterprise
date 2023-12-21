@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-	<h2>Products de <%=request.getAttribute("categoria") %> </h2>
+	<h2>Productos de <%=request.getParameter("categoria") %> </h2>
 	<table>
 		<th>
 			<td>Nombre</td>

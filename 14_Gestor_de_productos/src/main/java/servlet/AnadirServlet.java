@@ -22,7 +22,5 @@ public class AnadirServlet extends HttpServlet {
 		ServiceProductos sp=new ServiceProductos();
 		sp.anadirProducto(nuevoProducto);
 		request.getRequestDispatcher("Home.html").forward(request, response);
-
 	}
-
 }

@@ -18,12 +18,9 @@ public class BuscadorServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String busqueda=request.getParameter("categoria");
 	ServiceProductos sp=new ServiceProductos();
-	List<Producto> resultado=sp.buscarProducto(busqueda);
-	request.setAttribute("resultados", resultado);
-	request.setAttribute("categoria", busqueda);
+	List<Producto> resultado=sp.buscarProducto(busqueda);//recogemos la lista de la busqueda por la busqueda
+	request.setAttribute("resultados", resultado);//pasamos la lista de resultados
 	request.getRequestDispatcher("Resultados.jsp").forward(request, response);
-	
-	
-	}
 
+	}
 }
