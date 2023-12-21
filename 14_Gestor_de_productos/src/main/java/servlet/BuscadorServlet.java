@@ -11,7 +11,7 @@ import service.ServiceProductos;
 import java.io.IOException;
 import java.util.List;
 
-
+@WebServlet("/BuscadorServlet")
 public class BuscadorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,7 @@ public class BuscadorServlet extends HttpServlet {
 	List<Producto> resultado=sp.buscarProducto(busqueda);
 	request.setAttribute("resultados", resultado);
 	request.setAttribute("categoria", busqueda);
-	request.getRequestDispatcher("Resultados.jsp");
+	request.getRequestDispatcher("Resultados.jsp").forward(request, response);
 	
 	
 	}

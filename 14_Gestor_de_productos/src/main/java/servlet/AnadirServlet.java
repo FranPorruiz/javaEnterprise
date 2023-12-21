@@ -10,9 +10,7 @@ import service.ServiceProductos;
 
 import java.io.IOException;
 
-/**
- * Servlet implementation class anadirProducto
- */
+@WebServlet("/AnadirServlet")
 public class AnadirServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

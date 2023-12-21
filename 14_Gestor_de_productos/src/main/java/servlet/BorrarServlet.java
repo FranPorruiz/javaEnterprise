@@ -9,9 +9,7 @@ import service.ServiceProductos;
 
 import java.io.IOException;
 
-/**
- * Servlet implementation class BorrarServlet
- */
+@WebServlet("/BorrarServlet")
 public class BorrarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

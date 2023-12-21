@@ -9,6 +9,8 @@
 <body>
 	<p><%=request.getParameter("usuario")%>
 	es valido<p>
+	<a href="Login.html">Volver</a>
+	
 
 </body>
 </html>
