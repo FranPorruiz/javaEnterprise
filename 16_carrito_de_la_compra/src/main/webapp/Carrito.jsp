@@ -8,6 +8,7 @@
 <title>Carrito</title>
 </head>
 <body>
+<a href="CerrarSesionServlet">Cerrar Sesion</a>
 	<table>
 		<tr>
 			<th>Nombre</th>
@@ -25,10 +26,8 @@
 			<td><%=producto.getPrecio() %></td>
 			<td><%=producto.getCategoria() %></td>
 			<td>
-			<form action="BorrarServlet" method="GET">
-				<input type="submit" value="nombre" >
-				<a href="BorrarServlet">Elmiinar</a></td>
-			</form>			
+				<!-- con esta linea le decimos que le pasa el parametro nombre al Servlet y le decimos a que corresponda -->
+				<a href="BorrarServlet?nombre=<%=producto.getNombre()%>">Eliminar</a></td>		
 		</tr>
 		<%}%>
 	
