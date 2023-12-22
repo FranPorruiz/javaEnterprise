@@ -25,7 +25,10 @@ public class LoginServlet extends HttpServlet {
 			 generarCookis(response, request);
 			dispatcher=request.getRequestDispatcher("correcto.jsp");	 
 			 /*
-			 if(request.getParameter("recordar")==true){	 
+			 if(request.getParameter("recordar")!=null){
+			 generarCookis(response, request);
+			dispatcher=request.getRequestDispatcher("correcto.jsp");	 
+			 	 
 			 }
 			 */
 		}else {
