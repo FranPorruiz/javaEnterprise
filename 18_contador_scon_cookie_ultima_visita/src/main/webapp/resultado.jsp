@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center>
-		<!-- Prueba de cooki-->
+		<!--Cookies-->
 		<%String fecha="Primera visita";
 		Cookie[] cookies=request.getCookies();
 		if(cookies!=null){
@@ -23,6 +23,7 @@
 		<br>
 		<!-- el application es una variable para poder llamar  -->
 		<h2>Numero de total de visitas a mi página:<%=application.getAttribute("global") %></h2>
+		<!-- Llamada a cookies -->
 		<h3>Fecha de tu anterior visita: <%=fecha%></h3>
 		<a href="inicio.html">Volver</a>
 	</center>
