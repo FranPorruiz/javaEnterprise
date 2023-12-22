@@ -8,6 +8,7 @@
 <title>Carrito</title>
 </head>
 <body>
+<!-- Esto lanza a un servlet para cerrar la sessión -->
 <a href="CerrarSesionServlet">Cerrar Sesion</a>
 	<table>
 		<tr>
