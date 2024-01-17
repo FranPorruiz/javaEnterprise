@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>NotAS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+	body {background-color: #DADADA}
+	div{margin: 5px;
+		}
+
+</style>
+</head>
+<body>
+
+<!-- nOTA, boton DE NOTAS Y GUARDAR
+	mEDIA DE NOTAS
+	aprobados
+	notas separadas por un guion separadas por un guion, o coma
+ -->
+ 	<script type="text/javascript">
+ 		var notas=[];
+ 		function guardarNota() {
+ 			var notaNueva=document.getElementById("notaNueva").value;
+ 			console.log(notaNueva);
+ 			notas.push(notaNueva);
+ 			
+		}
+ 		
+ 		function mostrarMedia(){
+ 			var suma=0;
+ 			for (let n of notas){
+ 				suma+=parseInt(n);	
+ 				console.log(suma);
+ 			}
+ 			document.getElementById("media").innerText=suma/notas.length;
+ 			
+ 		}
+ 		
+ 		function mostrarNotas(){
+ 			notas.join("-");
+ 			document.getElementById("notas").innerText=notas;	
+ 			console.log(notas);
+	
+ 		}
+ 		
+ 		function mostrarAprobados(){
+ 			var aprobados=0;
+ 			for (let n of notas){
+ 				if(parseInt(n)>=5){
+ 					aprobados++;
+ 				}	
+
+ 			}
+ 			document.getElementById("aprobados").innerText=aprobados;
+ 				
+ 		}
+ 		
+ 	
+ 	
+ 	</script>
+	
+ 	<div class="row">
+ 		<div class="col-3 text-right">
+ 			<p class="h3">Nota: </p>
+ 		
+ 		</div>
+ 		<div class="col-3 text-center">
+ 			<input type="text" id="notaNueva" class="form-control">
+ 		</div>
+ 		<div class="col-3 text-left">
+ 			<input class="btn btn-primary" type="submit" value="Guardar" onclick="guardarNota();">
+ 		</div>
+ 
+ 	</div>
+ 	<div class="row">
+ 		<div class="col-2">
+ 		</div>
+ 		<div class="col-4 text-center">
+ 			<input  class="btn btn-primary" type="submit"  value="Media" onclick="mostrarMedia();">
+	
+ 		</div>
+ 		<div class="col-4 text-center">
+ 			<p id="media" style=" font-weight: bold;"></p>
+ 		</div>
+ 		
+ 		<div class="col-2">
+ 		</div>
+ 	</div>
+ 	<div class="row">
+ 		<div class="col-2">
+ 		</div>
+ 		<div class="col-4 text-center">
+ 			<input class="btn btn-primary" type="submit"  value="Aprobados" onclick="mostrarAprobados();">
+ 		</div>
+ 		<div class="col-4 text-center">
+ 			<p id="aprobados"  style=" font-weight: bold;"></p>
+ 		</div>
+ 		
+ 		<div class="col-2">
+ 		</div>
+ 	</div>
+ 	<div class="row">
+ 		<div class="col-2">
+ 		</div>
+ 		<div class="col-4 text-center">
+ 			<input  class="btn btn-primary"type="submit"  value="Ver notas" onclick="mostrarNotas();">
+ 		</div>
+ 		<div class="col-4 text-center">
+ 			<p id="notas"  style=" font-weight: bold;"></p>
+ 		</div>
+ 		
+ 		<div class="col-2">
+ 		</div>
+ 		
+ 
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Funciones y eventos</title>
+</head>
+<body>
+	<!-- con esto le decimos al boton que al clicarlo se llame a la funcion -->
+	<!-- alert nos crea una ventana con la respuesta -->
+	<input type="button"  value="pulsar aquí" onclick="alert(sumatorio(leerNumero()));">
+	<script type="text/javascript">
+		//declaracion de funciones
+		function sumatorio(n){
+			var s=0;
+			for (var i = 1; i < n; i++) {
+				s+=i;
+			}
+			return s;
+		}
+		function leerNumero(){
+			//el prompt nos lanza una ventana que nos pregunta el numero
+			var n=prompt("Introduce número");
+			return n;
+		}
+	
+	
+		
+	</script>
+
+</body>
+</html>
