@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Productos con JSON</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <script type="text/javascript">
+    var arraisProducto=[];    
+
+    function guardarProducto(){
+
+        var nuevoProducto={"nombre": document.getElementById("nombre").value,
+                        "categoria": document.getElementById("categoria").value,
+                        "precio": document.getElementById("precio").value            
+                        }
+                     
+        arraisProducto.push(nuevoProducto);
+        console.log(arraisProducto);
+
+    }      
+    
+    function buscarCategoria(){
+        var table="<table class='table table-striped'><tr><th>Nombre</th><th>Categoria</th><th>Precio</th></tr>";
+
+        arraisProducto.forEach(function(producto){
+            if(producto.categoria==document.getElementById("buscar").value){
+                table+="<tr>"+"<td>"+producto.nombre+"</td>"+"<td>"+producto.categoria+"</td>"+"<td>"+producto.precio+"</td>"+"</tr>"          
+            }
+            
+        });
+        table+="</table>";
+        document.getElementById("tableResultado").innerHTML=table;
+    }
+        
+    </script>
+
+    <div >
+        <div class="d-flex align-items-center justify-content-center">
+
+            <!--Nombre-->
+            <div class="p-2 m-2">
+                <p class="h5">Nombre: </p>
+            </div>
+            <div class="p-2 m-2">
+                <input type="text" id="nombre" class="form-control">
+            </div>
+
+            <!--Categoria-->
+            <div class="p-2 m-2">
+                <p class="h5">Categoria: </p>
+            </div>
+            <div class="p-2 m-2">
+                <input type="text" id="categoria" class="form-control">
+            </div>
+
+            <!--Precio-->
+            <div class="p-2 m-2">
+                <p class="h5">Precio: </p>
+            </div>
+            <div class="p-2 m-2">
+                <input type="text" id="precio" class="form-control">
+            </div>
+
+        </div>
+
+        <!--boton-->
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="p-2 m-2">
+                <input class="btn btn-primary text-center" type="submit" value="Guardar" onclick="guardarProducto();">
+            </div>
+        
+        </div>
+
+        <!--Linea de separacion-->
+        <div class="d-flex align-items-center justify-content-center">
+            <hr width="80%" color="blue">
+        </div>
+
+
+        <!--Busqueda por categoria-->
+        <div class="d-flex align-items-center justify-content-center">
+            <!--Nombre-->
+            <div class="p-2 m-2">
+                <p class="h5">Categoria: </p>
+            </div>
+            <div class="p-2 m-2">
+                <input type="text" id="buscar" class="form-control">
+            </div>
+            <div class="p-2 m-2">
+                <input class="btn btn-primary text-center" type="submit" value="Buscar" onclick="buscarCategoria();">
+            </div>
+        </div>
+
+        <!--Tabla-->
+        <div class="d-flex align-items-center justify-content-center">
+            <div id="tableResultado" class="col-4">
+            </div>
+
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
