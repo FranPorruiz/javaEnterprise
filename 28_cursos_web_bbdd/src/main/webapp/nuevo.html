@@ -7,11 +7,52 @@
 
 </head>
 <body>
+	<!--1. Campos numericos positivos para  
+		2. La duracion del curso ha de ser un numero entero
+		3.No se admiten cursos que contenga la palabra PHP
+		4.AÃ±adido luego-> se comprueba que duracion y precio son numeros
+		En caso de no valer tiene que salir un mensaje informando del error
+		-->
+		
+		<script type="text/javascript">
+			function validar(){
+				var nombre=document.getElementById("nombre").value;
+				var duracion=Number(document.getElementById("duracion").values);
+				var precio=document.getElementById("precio").value;
+				
+				if(isNan(duracion)||isNan(precio)){
+					alert("Duracion y precio deben ser numericos");
+					return false;
+				}
+	
+				
+				if(precio<=0 || duracion<=0){
+					alert("Error: El precio o la duracion no puede ser igual o inferior a 0")
+					return false;
+				}
+				
+				if(nombre.includes("php")){
+					alert("Error: php no se admite como curso")
+					return false;
+				}
+				
+				if(duracion.includes(".")){
+					alert("Error: la duracion ha de ser un entero")
+					return false;
+				}
+				
+	
+				return true;
+				
+				
+			}
+	
+		</script>	
 	<div class="border  align-items-center justify-content-center">
-		<h2>Añadir nuevo curso</h2>
-		<form action="FrontController?operation=doNuevo" method="post">
+		<h2>Aï¿½adir nuevo curso</h2>
+		<form action="FrontController?operation=doNuevo" method="post" onsubmit="return validar()">
 			Nombre: <input type="text" name="nombre"> <br>
-			Duración: <input type="text" name="duracion"><br>
+			Duraciï¿½n: <input type="text" name="duracion"><br>
 			Precio: <input type="text" name="precio"> <br>
 			<input type="submit" value="Guardar">
 		</form>
